@@ -1,0 +1,16 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор стоимости работ</title><link rel="stylesheet" href="styles.css"><script src="calculator.js" defer></script>
+</head>
+<body><main class="page">
+<header class="intro"><span class="eyebrow">РАСЧЁТ СТОИМОСТИ</span><h1>Калькулятор работ</h1><p>Выберите тип работы и заполните только необходимые параметры. Результат покажет стоимость для посредника и студента.</p></header>
+<form id="calculator-form" novalidate><section class="card" aria-labelledby="work-title"><h2 id="work-title">Параметры работы</h2>
+<div class="fields">
+<label class="field"><span>Тип работы</span><select id="work-type"><option value="course">Курсовая</option><option value="diploma">Диплом / ВКР</option><option value="test">Контрольная</option><option value="essay">Реферат</option><option value="research">НИР / отчёт по практике</option><option value="service">Отдельная услуга</option></select></label>
+<fieldset class="field price-choice"><legend>Показать цену</legend><label class="radio-option"><input type="radio" name="price" value="broker" checked> Для посредника</label><label class="radio-option"><input type="radio" name="price" value="student"> Для студента</label></fieldset>
+<div id="dynamic" class="fields span-all"></div></div>
+<div id="error" class="error" role="alert" aria-live="polite"></div><div class="actions"><button class="primary" type="submit">Рассчитать стоимость</button><button class="secondary" type="reset">Сбросить</button></div></section></form>
+<template id="research-chapter-options"><option value="theory">Теоретическая — 150 ₽/лист</option><option value="analytical">Аналитическая — 190 ₽/лист</option><option value="project">Проектная — 200 ₽/лист</option></template>
+<section id="result" class="card result hidden" aria-live="polite" aria-labelledby="result-title"><div class="result-heading"><div><span class="eyebrow">ВАШ РАСЧЁТ</span><h2 id="result-title">Стоимость работы</h2></div><div class="price-summary"><span id="selected-label"></span><strong id="selected-price"></strong></div></div><dl id="breakdown" class="breakdown"></dl><p id="student-price" class="student-price"></p></section><footer>Расчёт выполняется по заданным тарифам и коэффициентам.</footer></main></body></html>

@@ -1,0 +1,47 @@
+:root { color-scheme: light; --ink:#1d2a27; --muted:#697773; --green:#176b52; --green-dark:#10523f; --line:#e2e9e5; --paper:#fff; --canvas:#f3f7f4; --red:#a32e32; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--canvas); color:var(--ink); font-family:Arial,sans-serif; font-size:15px; }
+.page { width:min(820px, calc(100% - 32px)); margin:54px auto 32px; }
+.intro { margin:0 0 26px 4px; }
+.eyebrow { color:var(--green); font-size:11px; font-weight:800; letter-spacing:.13em; }
+h1 { margin:8px 0 8px; font-size:clamp(30px,5vw,42px); letter-spacing:-.045em; line-height:1.12; }
+.intro p { margin:0; max-width:590px; color:var(--muted); line-height:1.65; }
+.card { padding:28px; background:var(--paper); border:1px solid var(--line); border-radius:18px; box-shadow:0 8px 28px rgba(34,65,51,.045); }
+h2 { margin:0 0 22px; font-size:20px; letter-spacing:-.025em; }
+.fields { display:grid; grid-template-columns:1fr 1fr; gap:18px 20px; }
+.field { display:flex; flex-direction:column; gap:8px; min-width:0; color:#35433e; font-size:13px; font-weight:700; }
+input[type=number], input[type=text], select { width:100%; height:46px; padding:0 13px; border:1px solid #d9e2dd; border-radius:9px; background:#fff; color:var(--ink); font:500 14px Arial,sans-serif; outline:none; }
+input:focus, select:focus { border-color:#4b9a7b; box-shadow:0 0 0 3px rgba(75,154,123,.12); }
+.price-choice { margin:0; padding:0; border:0; display:flex; flex-direction:row; gap:20px; align-items:center; }
+.price-choice legend { width:100%; margin-bottom:8px; color:#35433e; font-size:13px; font-weight:700; }
+.radio-option { display:flex; align-items:center; gap:8px; color:#35433e; font-size:14px; font-weight:500; }
+.radio-option input { accent-color:var(--green); width:16px; height:16px; }
+.hint { margin:20px 0 0; color:var(--muted); font-size:12px; line-height:1.55; }
+.error { min-height:0; color:var(--red); font-size:13px; line-height:1.5; }
+.error:not(:empty) { margin-top:12px; }
+.actions { display:flex; gap:11px; margin-top:20px; }
+button { height:46px; padding:0 18px; border-radius:9px; font:700 14px Arial,sans-serif; cursor:pointer; transition:background .15s,transform .15s; }
+button:active { transform:translateY(1px); }
+.primary { border:1px solid var(--green); background:var(--green); color:#fff; }
+.primary:hover { background:var(--green-dark); }
+.secondary { border:1px solid var(--line); background:#fff; color:#44534d; }
+.secondary:hover { background:#f7faf8; }
+.hidden { display:none !important; }
+.result { margin-top:18px; }
+.result-heading { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; padding-bottom:20px; border-bottom:1px solid var(--line); }
+.result-heading h2 { margin:7px 0 0; }
+.price-summary { text-align:right; }
+.price-summary span { display:block; margin-bottom:4px; color:var(--muted); font-size:12px; }
+.price-summary strong { color:var(--green); font-size:28px; letter-spacing:-.04em; white-space:nowrap; }
+.breakdown { display:grid; grid-template-columns:minmax(170px, .8fr) 1.2fr; gap:0 22px; margin:8px 0 0; }
+.breakdown dt,.breakdown dd { margin:0; padding:11px 0; border-bottom:1px solid #edf1ee; font-size:13px; line-height:1.45; }
+.breakdown dt { color:var(--muted); }
+.breakdown dd { font-weight:700; overflow-wrap:anywhere; }
+.student-price { margin:17px 0 0; padding:13px 15px; border-radius:9px; background:#f0f7f3; color:#23533f; font-size:14px; font-weight:700; }
+footer { padding:18px 4px; color:var(--muted); font-size:11px; }
+@media (max-width:600px) { .page { margin-top:30px; } .card { padding:21px 18px; } .fields { grid-template-columns:1fr; gap:15px; } .result-heading { align-items:flex-start; flex-direction:column; } .price-summary { text-align:left; } .breakdown { grid-template-columns:1fr; } .breakdown dt { padding-bottom:2px; border-bottom:0; } .breakdown dd { padding-top:0; } .actions { flex-direction:column; } }
+
+.span-all { grid-column:1 / -1; }
+.fields.span-all { display:grid; grid-template-columns:1fr 1fr; gap:18px 20px; }
+@media (max-width:600px) { .fields.span-all { grid-template-columns:1fr; gap:15px; } }
+.fields.span-all.hidden { display:none !important; }
