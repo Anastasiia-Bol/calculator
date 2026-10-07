@@ -38,6 +38,8 @@ button:active { transform:translateY(1px); }
 .breakdown dt { color:var(--muted); }
 .breakdown dd { font-weight:700; overflow-wrap:anywhere; }
 .student-price { margin:17px 0 0; padding:13px 15px; border-radius:9px; background:#f0f7f3; color:#23533f; font-size:14px; font-weight:700; }
+.copy-actions { display:flex; align-items:center; gap:12px; margin-top:16px; }
+.copy-status { color:var(--green); font-size:13px; }
 footer { padding:18px 4px; color:var(--muted); font-size:11px; }
 @media (max-width:600px) { .page { margin-top:30px; } .card { padding:21px 18px; } .fields { grid-template-columns:1fr; gap:15px; } .result-heading { align-items:flex-start; flex-direction:column; } .price-summary { text-align:left; } .breakdown { grid-template-columns:1fr; } .breakdown dt { padding-bottom:2px; border-bottom:0; } .breakdown dd { padding-top:0; } .actions { flex-direction:column; } }
 
